@@ -12,6 +12,6 @@ if not pyfile:
 subprocess.run(["python3", pyfile])
 
 compiled_filename = os.path.splitext(pyfile)[0] + 'c'
-os.rename("__pycache__/" + pyfile + "c", compiled_filename)
+os.rename(pyfile + "c", compiled_filename)
 
 print(f"Compiling {pyfile} ...")
