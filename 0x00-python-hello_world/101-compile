@@ -2,13 +2,14 @@
 import os
 import sys
 import compileall
+import subprocess
 
 pyfile = os.getenv("PYFILE")
 
 if not pyfile:
     sys.exit("Error: PYFILE environment variable not set.")
 
-compileall.compile_file(pyfile, doraise=True)
+subprocess.run(["python3", pyfile])
 
 compiled_filename = os.path.splitext(pyfile)[0] + 'c'
 os.rename("__pycache__/" + pyfile + "c", compiled_filename)
