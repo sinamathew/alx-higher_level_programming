@@ -1,4 +1,2 @@
 #!/bin/bash
-
-# Shell script that runs a Python script.
 ./${PYFILE}
