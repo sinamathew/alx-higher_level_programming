@@ -1,17 +1,20 @@
-#!/usr/bin/python3
-import os
-import sys
-import compileall
-import subprocess
+#!/bin/bash
 
-pyfile = os.getenv("PYFILE")
+if [ -z "$PYFILE" ] then
+  echo "Error: PYFILE environment variable not set."
+  exit 1
+fi
 
-if not pyfile:
-    sys.exit("Error: PYFILE environment variable not set.")
+# Compile the Python script
+python3 -m py_compile "$PYFILE"
 
-subprocess.run(["python3", pyfile])
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+  compiled_file="${PYFILE}c"
+  echo "Compiling $PYFILE ..."
+  mv "__pycache__/$compiled_file" "$compiled_file"
+  echo "Compilation successful."
+else
+  echo "Compilation failed."
+fi
 
-compiled_filename = os.path.splitext(pyfile)[0] + 'c'
-os.rename(pyfile + "c", compiled_filename)
-
-print(f"Compiling {pyfile} ...")
