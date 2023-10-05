@@ -8,4 +8,4 @@ a = 1
 b = 2
 
 # Call add and display the result using string formatting
-print("{} + {} = {}".format(a, b, add(a, b)))
+print("{0} + {1} = {2}".format(a, b, add(a, b)))
