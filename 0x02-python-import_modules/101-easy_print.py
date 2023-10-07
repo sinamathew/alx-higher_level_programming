@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-import subprocess
-subprocess.run(["echo", "#pythoniscool"])
+__import__("builtins").__dict__["print"]("#pythoniscool\n")
