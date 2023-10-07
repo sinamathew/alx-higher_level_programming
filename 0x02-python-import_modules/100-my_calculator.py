@@ -12,13 +12,13 @@ if __name__ == "__main__":
         b = sys.argv[3]
         operator = sys.argv[2]
 
-        if (operator = "+"):
+        if (operator == "+"):
             print("{} + {} = {}".format(a, b, add(a, b)))
-        elif (operator = "-"):
+        elif (operator == "-"):
             print("{} - {} = {}".format(a, b, sub(a, b)))
-        elif (operator = "*"):
+        elif (operator == "*"):
             print("{} * {} = {}".format(a, b, mul(a, b)))
-        elif (operator = "/"):
+        elif (operator == "/"):
             print("{} / {} = {}".format(a, b, div(a, b)))
         else:
             print("Available operators: +, -, *, and /")
