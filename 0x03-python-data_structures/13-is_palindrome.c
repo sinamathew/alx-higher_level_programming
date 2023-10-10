@@ -14,7 +14,6 @@ int is_palindrome = 1;
 if (*head == NULL || (*head)->next == NULL)
 return (1);
 
-/* Find the middle of the list using Floyd's cycle-finding algorithm */
 while (fast_ptr != NULL && fast_ptr->next != NULL)
 {
 fast_ptr = fast_ptr->next->next;
@@ -22,25 +21,20 @@ prev = slow_ptr;
 slow_ptr = slow_ptr->next;
 }
 
-/* Handle odd-length lists */
 if (fast_ptr != NULL)
 {
 midnode = slow_ptr;
 slow_ptr = slow_ptr->next;
 }
 
-/* Reverse the second half of the list */
 second_half = slow_ptr;
 prev->next = NULL;
 reverse_list(&second_half);
 
-/* Compare the first and second halves of the list for palindrome */
 is_palindrome = compare_lists(*head, second_half);
 
-/* Restore the original list by reversing the second half again */
 reverse_list(&second_half);
 
-/* Reattach the first and second halves */
 if (midnode != NULL)
 {
 prev->next = midnode;
