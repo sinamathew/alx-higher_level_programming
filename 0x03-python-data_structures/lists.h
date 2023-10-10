@@ -15,6 +15,10 @@ int n;
 struct listint_s *next;
 } listint_t;
 
+/*---HEADER---*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <Python.h>
 
 /*---PROTOTYPES---*/
 size_t print_listint(const listint_t *h);
