@@ -85,4 +85,6 @@ list2 = list2->next;
 
 if (list1 == NULL && list2 == NULL)
 return (1);
+
+return (0);
 }
