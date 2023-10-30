@@ -5,7 +5,7 @@
 class Rectangle:
     """Represent a class Rectangle.
 
-    Defines a rectangle by:(based on 1-rectangle.py)
+    Defines a rectangle by:(based on 3-rectangle.py)
 
     Args:
         width (int): the width of the rectangle
@@ -96,3 +96,29 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        """Get the size of string as shape.
+
+        Returns:
+            Nothing: if height or width is 0
+            rect_str (#): representing the height and width
+
+        """
+        if self.__height == 0 or self.__width == 0:
+            return ""
+        rect_str = ""
+        for i in range(self.__height):
+            rect_str += "#" * self.__width
+            if i < self.__height - 1:
+                rect_str += "\n"
+        return rect_str
+
+    def __repr__(self):
+        """String representation.
+
+        Returns:
+            Official string representation
+
+        """
+        return f"Rectangle({self.__width}, {self.__height})"

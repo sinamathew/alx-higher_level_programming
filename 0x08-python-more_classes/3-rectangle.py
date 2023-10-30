@@ -5,7 +5,7 @@
 class Rectangle:
     """Represent a class Rectangle.
 
-    Defines a rectangle by:(based on 0-rectangle.py)
+    Defines a rectangle by:(based on 2-rectangle.py)
 
     Args:
         width (int): the width of the rectangle
@@ -98,7 +98,7 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Get the size as a string.
+        """Get the size of string as shape.
 
         Returns:
             Nothing: if height or width is 0
