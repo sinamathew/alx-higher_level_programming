@@ -93,6 +93,6 @@ class Rectangle:
             the sum of width and height multipied by 2
 
         """
-        if self.__width == 0 or self.__height = 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
