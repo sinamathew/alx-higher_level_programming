@@ -99,7 +99,7 @@ class Rectangle:
 
     def __str__(self):
         """Get the size as a string.
-        
+
         Returns:
             Nothing: if height or width is 0
             rect_str (#): representing the height and width
