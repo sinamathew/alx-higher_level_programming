@@ -5,7 +5,7 @@
 class Rectangle:
     """Represent a class Rectangle.
 
-    Defines a rectangle by:(based on 7-rectangle.py)
+    Defines a rectangle by:(based on 8-rectangle.py)
 
     Args:
         width (int): the width of the rectangle
@@ -151,3 +151,10 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        """Returns:
+            a new rectangle instances
+        """
+        return cls(size, size)
