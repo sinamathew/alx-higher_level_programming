@@ -4,14 +4,29 @@ class LockedClass:
 
     Prevents the user from dynamically creating new instances attribute.
 
+    Attributes:
+        __slots__ (tuple): A tuple containing the allowed attribute names.
+
+    Args:
+        first_name (str): The value for th 'first_name' attribute.
+
+    Note:
+        Attempting to create or access attributes not listed in __slots__ will
+            results in an AttributeError
+
     """
 
     __slots__ = ('first_name')
 
     def __init__(self, first_name):
-        """Accepts only one attribute.
+        """Initialize the LockedClass instance.
 
-        Exception is called while dynamically creating new attribute.
+        Args:
+            first_name (str): the value for the 'first_name' attribute.
+
+        Raises:
+            AttributeError: if any attributes other than 'first_name' are
+                accessed or created.
 
         """
         self.first_name = first_name
