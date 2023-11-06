@@ -6,7 +6,7 @@ class MyList(list):
     """A class that inherit from list.
 
     Args:
-        list: the inherited list
+        list (int): the inherited list
 
     Returns:
         the list
