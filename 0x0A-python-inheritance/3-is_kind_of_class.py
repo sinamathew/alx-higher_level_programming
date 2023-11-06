@@ -2,7 +2,7 @@
 """Contain function that kind of an object."""
 
 
-def is_kid_of_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """Check if object is kind of specified class.
 
     Args:
