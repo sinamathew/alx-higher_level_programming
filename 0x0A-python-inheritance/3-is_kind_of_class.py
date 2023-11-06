@@ -6,11 +6,11 @@ def is_kid_of_class(obj, a_class):
     """Check if object is kind of specified class.
 
     Args:
-        obj (obj): the object
-        a_class (instances): a specified class
-
+        obj (any): the object
+        a_class (type): a specified class
     Return:
         True if object is a kind of the specified class, else False
-
     """
-    return isinstance(obj, a_class)
+    if isinstance(obj, a_class):
+        return True
+    return False
