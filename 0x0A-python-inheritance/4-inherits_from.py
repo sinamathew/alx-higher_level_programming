@@ -2,7 +2,7 @@
 """Contain function that check for subclass."""
 
 
-def is_kind_of_class(obj, a_class):
+def inherits_from(obj, a_class):
     """Check if object is a subclass.
 
     Args:
