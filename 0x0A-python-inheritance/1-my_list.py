@@ -3,15 +3,9 @@
 
 
 class MyList(list):
-    """A class that inherit from list.
+    """A class that inherit from list."""
 
-    Args:
-        list (int): the inherited list
-
-    Returns:
-        the list
-        sorted list
-
-    """
     def print_sorted(self):
+        """Prints out sorted value of list."""
+
         return print(sorted(self))
