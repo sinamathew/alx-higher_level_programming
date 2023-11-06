@@ -14,6 +14,14 @@
 >>> bg.integer_validator("width", 89)
 >>>
 
-# Testing the exceptions
+# Testing the TypeError exceptions
 >>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+  ...
+TypeError: name must be an integer
 
+# Testing the ValueError exceptions
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+  ...
+ValueError: name must be an integer
