@@ -1,7 +1,8 @@
 # Test MyList print_sorted() method
 
 # Import the MyList class
->>> from my_list import MyList
+>>> MyList = __import__('1-my_list').MyList
+>>>
 
 # Create a MyList object
 >>> my_list = MyList()
