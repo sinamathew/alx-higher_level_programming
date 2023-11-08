@@ -20,7 +20,7 @@ def add_item():
         with open(filename, 'w', encoding="utf-8") as file:
             file.write("[]")
 
-    current_list = load_from_json(filename)
+    current_list = load_from_json_file(filename)
 
     current_list.extend(arg_list)
 
