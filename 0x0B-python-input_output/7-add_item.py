@@ -13,17 +13,14 @@ def add_item():
     Args:
         Arguments taken in CLI mode.
     """
-    arg_list = sys.argv[1:]
     filename = "add_item.json"
+    try:
+        current_list = load_from_json_file(filename)
+    except FileNotFoundError:
+        current_list = []
 
-    if not path.exists(filename):
-        with open(filename, 'w', encoding="utf-8") as file:
-            file.write("[]")
-
-    current_list = load_from_json_file(filename)
-
+    arg_list = sys.argv[1:]
     current_list.extend(arg_list)
-
     save_to_json_file(current_list, filename)
 
 
