@@ -12,5 +12,5 @@ def add_item:
     Args:
         Arguments taken in CLI mode.
     """
-    arguments = sys.argv
-    save_to_json_file(my_list, add_item.json)
+    arg_list = sys.argv[1:]
+    save_to_json_file(arg_list, add_item.json)
