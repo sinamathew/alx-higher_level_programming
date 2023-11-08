@@ -25,3 +25,6 @@ def add_item():
     current_list.extend(arg_list)
 
     save_to_json_file(current_list, filename)
+
+if __name__ == "__main__":
+    add_item()
