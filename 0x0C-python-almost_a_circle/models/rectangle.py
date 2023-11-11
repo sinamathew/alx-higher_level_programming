@@ -13,6 +13,11 @@ class Rectangle(Base):
             height (int): the rectangle height.
             y (int): maybe the position
             x (int): maybe the position
+            id (int): the identity of the new rectangle.
+        Raises:
+            TypeError: If either width, height, x or y is not int
+            ValueError: If either width or height <= 0
+            ValueError: If either x or y < 0.
         """
         super().__init__(id)
         self.__width = width
@@ -48,12 +53,6 @@ class Rectangle(Base):
         """
         return self.__y
 
-    @property
-    def width(self):
-        """Getter for width.
-        Returns: The width.
-        """
-        return self.__width
 
     @width.setter
     def width(self, value):
@@ -61,6 +60,10 @@ class Rectangle(Base):
         Args:
             value (int): the value of width.
         """
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @height.setter
@@ -69,6 +72,10 @@ class Rectangle(Base):
         Args:
             value (int): the value of height.
         """
+        if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @x.setter
@@ -77,6 +84,10 @@ class Rectangle(Base):
         Args:
             value (int): the value of x.
         """
+        if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @y.setter
@@ -85,4 +96,8 @@ class Rectangle(Base):
         Args:
             value (int): the value of y.
         """
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
