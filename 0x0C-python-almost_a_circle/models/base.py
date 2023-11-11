@@ -34,5 +34,5 @@ class Base:
         json_string = cls.to_json_string(list_dicts)
 
         with open(filename, "w", encoding="utf-8") as file:
-        file.write(json_string)
+            file.write(json_string)
 
