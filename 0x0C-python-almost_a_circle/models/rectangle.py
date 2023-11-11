@@ -114,3 +114,11 @@ class Rectangle(Base):
             for i in range(self.__width):
                 print("#", end='')
             print("")
+
+    def __str__(self):
+        """Overides the original string method.
+        Returns:
+            [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(Base.id, \
+                self.__x, self.__y, self.__width, self.__height)
