@@ -4,13 +4,12 @@
 
 class Base:
     """The base of all other classes in this project."""
+    __nb_objects = 0
 
-    def __init__(self, id=NOne):
+    def __init__(self, id=None):
         """Initialize the class Base."""
-        self.__nb_objects = 0
-
-        if id not None:
+        if id is not None:
             self.id = id
         else:
-            self.__nb_objects =+ 1
-            self.id = self.__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
