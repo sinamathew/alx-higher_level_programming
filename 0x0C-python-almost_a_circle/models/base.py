@@ -49,4 +49,3 @@ class Base:
             return json.loads(json_string)
         else:
             return my_list
-        """
