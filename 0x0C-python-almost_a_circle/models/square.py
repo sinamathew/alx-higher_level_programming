@@ -43,8 +43,8 @@ class Square(Rectangle):
         """Prints the...I don't know.
         Returns: the string.....whatever.
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, \
-                self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
 
     def to_dictionary(self):
         """Returns the dictionary representation of Square."""

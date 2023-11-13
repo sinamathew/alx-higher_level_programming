@@ -53,7 +53,6 @@ class Rectangle(Base):
         """
         return self.__y
 
-
     @width.setter
     def width(self, value):
         """Setter for width.
@@ -124,8 +123,10 @@ class Rectangle(Base):
         Returns:
             [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, \
-                self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width,
+                                                       self.height)
 
     def update(self, *args, **kwargs):
         """Assign arguments to each attributes.

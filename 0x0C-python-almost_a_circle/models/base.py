@@ -4,6 +4,7 @@ import json
 import csv
 import turtle
 
+
 class Base:
     """The base of all other classes in this project."""
     __nb_objects = 0
@@ -77,7 +78,7 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         instance_list = []
-        
+
         try:
             with open(filename, 'r') as file:
                 json_string = file.read()
@@ -102,11 +103,11 @@ class Base:
             writer = csv.writer(file)
             for instance in list_objs:
                 if cls.__name__ == "Rectangle":
-                    writer.writerow([instance.id, instance.width, \
-                            instance.height, instance.x, instance.y])
+                    writer.writerow([instance.id, instance.width,
+                                     instance.height, instance.x, instance.y])
                 elif cls.__name__ == "Square":
-                    writer.writerow([instance.id, \
-                            instance.size, instance.x, instance.y])
+                    writer.writerow([instance.id,
+                                     instance.size, instance.x, instance.y])
 
     @classmethod
     def load_from_file_csv(cls):
@@ -122,11 +123,11 @@ class Base:
                 reader = csv.reader(file)
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        instance = cls(int(row[1]), int(row[2]), \
-                                int(row[3]), int(row[4]), int(row[0]))
+                        instance = cls(int(row[1]), int(row[2]),
+                                       int(row[3]), int(row[4]), int(row[0]))
                     elif cls.__name__ == "Square":
-                        instance = cls(int(row[1]), \
-                                int(row[2]), int(row[3]), int(row[0]))
+                        instance = cls(int(row[1]),
+                                       int(row[2]), int(row[3]), int(row[0]))
                     instance_list.append(instance)
         except FileNotFoundError:
             pass
@@ -136,7 +137,7 @@ class Base:
     def draw(list_rectangles, list_squares):
         """Create a turtle screen"""
         screen = turtle.Screen()
-        
+
         t = turtle.Turtle()
 
         t.speed(1)
@@ -164,10 +165,10 @@ class Base:
 
         screen.exitonclick()
 
+
 if __name__ == "__main__":
-    list_rectangles = [Rectangle(100, 40), Rectangle(90, 110, 30, 10), Rectangle(20, 25, 110, 80)]
+    list_rectangles = [Rectangle(100, 40), Rectangle(90, 110, 30, 10),
+                       Rectangle(20, 25, 110, 80)]
     list_squares = [Square(35), Square(15, 70, 50), Square(80, 30, 70)]
 
-    # Call the draw method to display the shapes
     Base.draw(list_rectangles, list_squares)
-
