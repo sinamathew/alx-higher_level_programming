@@ -44,8 +44,25 @@ class Base:
         Returns:
             empty list if file is none else, the JSON string representation
         """
-        my_list = []
         if json_string:
             return json.loads(json_string)
         else:
-            return my_list
+            return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Create something new.
+        Args:
+            dictionary (kwargs): contains a dictionary.
+        Returns:
+            an instance with all attributes already set.
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = cls()
+
+        dummy.update(**dictionary)
+        return dummy
