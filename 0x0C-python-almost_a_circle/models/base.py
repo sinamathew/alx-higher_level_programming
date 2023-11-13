@@ -2,7 +2,7 @@
 """Defines a class Base"""
 import json
 import csv
-
+import turtle
 
 class Base:
     """The base of all other classes in this project."""
@@ -131,4 +131,43 @@ class Base:
         except FileNotFoundError:
             pass
         return instance_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Create a turtle screen"""
+        screen = turtle.Screen()
+        
+        t = turtle.Turtle()
+
+        t.speed(1)
+
+        for rect in list_rectangles:
+            t.penup()
+            t.goto(rect.x, rect.y)
+            t.pendown()
+            t.forward(rect.width)
+            t.left(90)
+            t.forward(rect.height)
+            t.left(90)
+            t.forward(rect.width)
+            t.left(90)
+            t.forward(rect.height)
+            t.left(90)
+
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+
+        screen.exitonclick()
+
+if __name__ == "__main__":
+    list_rectangles = [Rectangle(100, 40), Rectangle(90, 110, 30, 10), Rectangle(20, 25, 110, 80)]
+    list_squares = [Square(35), Square(15, 70, 50), Square(80, 30, 70)]
+
+    # Call the draw method to display the shapes
+    Base.draw(list_rectangles, list_squares)
 
