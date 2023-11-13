@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a class Base"""
 import json
+import csv
 
 
 class Base:
@@ -100,10 +101,10 @@ class Base:
         with open(filename, 'w', newline='') as file:
             writer = csv.writer(file)
             for instance in list_objs:
-                if cls is Rectangle:
+                if cls.__name__ == "Rectangle":
                     writer.writerow([instance.id, instance.width, \
                             instance.height, instance.x, instance.y])
-                elif cls is Square:
+                elif cls.__name__ == "Square":
                     writer.writerow([instance.id, \
                             instance.size, instance.x, instance.y])
 
@@ -120,10 +121,10 @@ class Base:
             with open(filename, 'r', newline='') as file:
                 reader = csv.reader(file)
                 for row in reader:
-                    if cls is Rectangle:
+                    if cls.__name__ == "Rectangle":
                         instance = cls(int(row[1]), int(row[2]), \
                                 int(row[3]), int(row[4]), int(row[0]))
-                    elif cls is Square:
+                    elif cls.__name__ == "Square":
                         instance = cls(int(row[1]), \
                                 int(row[2]), int(row[3]), int(row[0]))
                     instance_list.append(instance)
