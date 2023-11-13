@@ -88,3 +88,46 @@ class Base:
             pass
 
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of instances to a CSV file.
+
+        Args:
+            list_objs (list): A list of instances to be serialized.
+        """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            for instance in list_objs:
+                if cls is Rectangle:
+                    writer.writerow([instance.id, instance.width, \
+                            instance.height, instance.x, instance.y])
+                elif cls is Square:
+                    writer.writerow([instance.id, \
+                            instance.size, instance.x, instance.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes instances from a CSV file.
+
+        Returns:
+            list: A list of instances.
+        """
+        filename = cls.__name__ + ".csv"
+        instance_list = []
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    if cls is Rectangle:
+                        instance = cls(int(row[1]), int(row[2]), \
+                                int(row[3]), int(row[4]), int(row[0]))
+                    elif cls is Square:
+                        instance = cls(int(row[1]), \
+                                int(row[2]), int(row[3]), int(row[0]))
+                    instance_list.append(instance)
+        except FileNotFoundError:
+            pass
+        return instance_list
+
