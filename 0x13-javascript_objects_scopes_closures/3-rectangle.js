@@ -9,8 +9,8 @@ class Rectangle {
 
   print () {
     for (let i = 0; i < this.height; i++) {
+      let shape = '';
       for (let j = 0; j < this.width; j++) {
-        let shape = '';
         shape += 'X';
       }
       console.log(shape);
