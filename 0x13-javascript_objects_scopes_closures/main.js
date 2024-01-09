@@ -1,14 +1,6 @@
 #!/usr/bin/node
-const Rectangle = require('./4-rectangle');
+const nbOccurences = require('./7-occurrences').nbOccurences;
 
-const r1 = new Rectangle(2, 3);
-console.log('Normal:');
-r1.print();
-
-console.log('Double:');
-r1.double();
-r1.print();
-
-console.log('Rotate:');
-r1.rotate();
-r1.print();
+console.log(nbOccurences([1, 2, 3, 4, 5, 6], 3));
+console.log(nbOccurences([3, 2, 3, 4, 5, 3, 3], 3));
+console.log(nbOccurences(['S', 12, 'c', 'S', 'School', 8], 'S'));
