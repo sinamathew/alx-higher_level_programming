@@ -15,6 +15,7 @@ if __name__ == "__main__":
     city_names = [row[1] for row in query_rows]
     if city_names:
         print(", ".join(city_names))
-    print()
+    else:
+        print()
     cur.close()
     conn.close()
