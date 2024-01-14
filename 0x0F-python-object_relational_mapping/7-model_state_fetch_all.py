@@ -5,6 +5,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
+
 arg1 = sys.argv[1]
 arg2 = sys.argv[2]
 arg3 = sys.argv[3]
