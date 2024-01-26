@@ -1,4 +1,5 @@
 def find_peak(list_of_integers):
+    """Finds the peak in the list of integers."""
     if not list_of_integers:
         return None
 
