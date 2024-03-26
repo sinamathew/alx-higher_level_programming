@@ -8,5 +8,5 @@ request(url, (err, response) => {
   if (err) {
     console.error(err);
   }
-  console.log('Code:', response && response.statusCode);
+  console.log('code:', response && response.statusCode);
 });
