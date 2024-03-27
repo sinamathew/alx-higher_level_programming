@@ -1,21 +1,27 @@
 #!/usr/bin/node
-// A script that prints the title of a Star Wars movie using episode number.
+// A script that counts the number of Star Wars characters with ID 18
+// in a movie based on its episode number.
 
 const request = require('request');
-const url = process.argv[2];
-const people = "https://swapi-api.alx-tools.com/api/people/"
+const url = process.argv[2]; // Episode number URL
+const characterURL = 'https://swapi-api.alx-tools.com/api/people/18/'; // Character with ID 18
 
-request(url, (err, response, body) => {
-  if (err) {
-    console.log(err);
+request(url, (error, response, body) => {
+  if (error) {
+    console.error(error);
   } else {
     const jsonData = JSON.parse(body);
+
+    let characterCount = 0; // Initialize character count
+
+    // Check if request was successful and data exists
+    if (jsonData && jsonData.results) {
+      for (const result of jsonData.results) {
+        if (result.characters.includes(characterURL)) {
+          characterCount++;
+        }
+      }
+      console.log(characterCount);
+    }
   }
-  let lostChars = 0;
-  for (let i = 0; i < jsonData.results.length; i++) {
-    for (let j = 0; j < jsonData.results.characters.length; j++) {
-      if (jsonData.results.characters === people + "18/") {
-        lostChars++;
-      }}};
-  console.log(lostChars);
-};
+});
