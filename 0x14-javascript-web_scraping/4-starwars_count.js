@@ -4,7 +4,6 @@
 
 const request = require('request');
 const url = process.argv[2]; // Episode number URL
-const characterURL = 'https://swapi-api.alx-tools.com/api/people/18/'; // Character with ID 18
 
 request(url, (error, response, body) => {
   if (error) {
@@ -17,7 +16,7 @@ request(url, (error, response, body) => {
     // Check if request was successful and data exists
     if (jsonData && jsonData.results) {
       for (const result of jsonData.results) {
-        if (result.characters.includes(characterURL)) {
+        if (result.characters.includes(18)) {
           characterCount++;
         }
       }
